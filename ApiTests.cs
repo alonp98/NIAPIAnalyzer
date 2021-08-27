@@ -25,8 +25,6 @@ namespace ApiUnitTests
 
             //Assert number of titles
             Assert.IsTrue(titleList.Count == 30);
-            //Assert.IsTrue(titleList[0].Equals("Why are Bootstrap tabs displaying tab-pane divs with incorrect widths when using highcharts?"));
-            ///Assert.IsTrue(titleList[29].Equals("creating highchart with ajax json data"));
         }
 
         [TestMethod]
@@ -104,8 +102,5 @@ namespace ApiUnitTests
             Assert.IsTrue(commits == null);
 
         }
-
-
-
     }
 }
