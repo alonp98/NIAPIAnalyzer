@@ -1,15 +1,14 @@
 ﻿using AnalayzeApi;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+
 
 namespace ApiUnitTests
 {
     class AnalayzipApiExcerise
     {
+        // step 1
         public static string[] Analyze(string datasourceName)
         {
             if (datasourceName.Equals("Stackoverflow"))
@@ -22,21 +21,25 @@ namespace ApiUnitTests
             } else if (datasourceName.Equals("Github")) {
                 GithubApiHandler githubApiHandler = new GithubApiHandler();
                 string response = githubApiHandler.ExecuteRequestAndGetResponse();
-                List<String> commitsList = GithubApiHandler.parseResponseAndGetTitles(response);
+                List<String> commitsList = GithubApiHandler.parseResponseAndGetMessages(response);
                 return commitsList.ToArray();
             }
             return null;
         }
 
+        // step 2
         public static string[] Analyze(string datasourceName, long analysisFlowId)
         {
+            // first we will analyze the data as we wanted at step 1
             string[] res = Analyze(datasourceName);
             if(res != null)
             {
+                // running the analysis flow
                 switch (analysisFlowId)
                 {
                    case 1:
                         {
+                            // filter the list as we wanted by the analysis
                             List<string> filteredList = new List<string>();
                             foreach(var item in res)
                             {

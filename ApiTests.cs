@@ -1,8 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using AnalayzeApi;
-using Newtonsoft.Json;
-using System;
-using System.Linq;
+using System.Net;
 
 namespace ApiUnitTests
 {
@@ -101,6 +99,24 @@ namespace ApiUnitTests
             string[] commits = AnalayzipApiExcerise.Analyze("asd", 5);
             Assert.IsTrue(commits == null);
 
+        }
+
+        [TestMethod]
+        public void stackoverflow_api_valid()
+        {
+            StackOverFlowApiHandler client = new StackOverFlowApiHandler();
+            var response = client.getStackOverFlowResponse();
+ 
+            Assert.IsTrue(response.StatusCode == HttpStatusCode.OK);
+        }
+
+        [TestMethod]
+        public void github_api_valid()
+        {
+            GithubApiHandler client = new GithubApiHandler();
+            var response = client.getGithubResponse();
+
+            Assert.IsTrue(response.StatusCode == HttpStatusCode.OK);
         }
     }
 }

@@ -1,9 +1,5 @@
 ﻿using RestSharp;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AnalayzeApi
 {
@@ -15,6 +11,7 @@ namespace AnalayzeApi
             mUrl = url;
         }
 
+        // return the content of the response from api
         public string Execute()
         {
             IRestResponse response = new RestClient(mUrl).Execute(new RestRequest(Method.GET));
