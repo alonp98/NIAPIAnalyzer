@@ -37,7 +37,7 @@ namespace ApiUnitTests
             return result;
         }
 
-        // get only the response from stackoverflow api (for api test)
+        // get only the response from github api (for api test)
         public IRestResponse getGithubResponse()
         {
             var client = new RestClient(URL);
