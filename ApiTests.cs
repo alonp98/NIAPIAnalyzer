@@ -11,7 +11,6 @@ namespace ApiUnitTests
         public void StackOverFlow_valid()
         {
             //Post api request
-
             StackOverFlowApiHandler apiHandler = new StackOverFlowApiHandler();
             string response = apiHandler.ExecuteRequestAndGetResponse();
 
@@ -36,14 +35,14 @@ namespace ApiUnitTests
         [TestMethod]
         public void ExTestGithub_step_1()
         {
-            string[] commits = AnalayzipApiExcerise.Analyze("Github");
+            string[] commits = AnalyzeApiExercise.Analyze("Github");
             Assert.IsTrue(commits.Length == 30, "Title list size isn't 30");
         }
 
         [TestMethod]
         public void ExTestStackOverFlow_step_1()
         {
-            string[] titles =  AnalayzipApiExcerise.Analyze("Stackoverflow");
+            string[] titles =  AnalyzeApiExercise.Analyze("Stackoverflow");
             Assert.IsTrue(titles.Length == 30, "Title list size isn't 30");
 
         }
@@ -51,14 +50,14 @@ namespace ApiUnitTests
         [TestMethod]
         public void Ex_negative_test_step_1()
         {
-            string[] titles = AnalayzipApiExcerise.Analyze("Negative");
+            string[] titles = AnalyzeApiExercise.Analyze("Negative");
             Assert.IsTrue(titles == null);
         }
 
         [TestMethod]
         public void ExTestGithub_step_2()
         {
-            string[] commits = AnalayzipApiExcerise.Analyze("Github",1);
+            string[] commits = AnalyzeApiExercise.Analyze("Github",1);
             Assert.IsTrue(commits.Length == 30, "commits list size isn't 30");
             foreach(string item in commits)
             {
@@ -69,7 +68,7 @@ namespace ApiUnitTests
         [TestMethod]
         public void ExTestGithub_negative_step_2()
         {
-            string[] commits = AnalayzipApiExcerise.Analyze("Github", 5);
+            string[] commits = AnalyzeApiExercise.Analyze("Github", 5);
             Assert.IsTrue(commits == null);
            
         }
@@ -77,7 +76,7 @@ namespace ApiUnitTests
         [TestMethod]
         public void ExTestStackOverFlow_step_2()
         {
-            string[] titles = AnalayzipApiExcerise.Analyze("Stackoverflow", 1);
+            string[] titles = AnalyzeApiExercise.Analyze("Stackoverflow", 1);
             Assert.IsTrue(titles.Length == 30, "titles list size isn't 30");
             foreach (string item in titles)
             {
@@ -88,7 +87,7 @@ namespace ApiUnitTests
         [TestMethod]
         public void ExTestStackOverFlow_negative_step_2()
         {
-            string[] commits = AnalayzipApiExcerise.Analyze("Stackoverflow", 5);
+            string[] commits = AnalyzeApiExercise.Analyze("Stackoverflow", 5);
             Assert.IsTrue(commits == null);
 
         }
@@ -96,7 +95,7 @@ namespace ApiUnitTests
         [TestMethod]
         public void negative_step_2()
         {
-            string[] commits = AnalayzipApiExcerise.Analyze("asd", 5);
+            string[] commits = AnalyzeApiExercise.Analyze("asd", 5);
             Assert.IsTrue(commits == null);
 
         }

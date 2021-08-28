@@ -25,7 +25,7 @@ namespace AnalayzeApi
             {
                 result =  JsonConvert.DeserializeObject<Rootobject>(response).items.Select(a => a.title).ToList();
             }
-            catch (Exception ignoreException)
+            catch (Exception)
             {
 
             }

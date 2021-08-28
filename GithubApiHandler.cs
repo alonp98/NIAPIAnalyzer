@@ -30,7 +30,7 @@ namespace ApiUnitTests
                     result.Add(item.commit.message);
                 }
             }
-            catch (Exception ignoreException)
+            catch (Exception)
             {
 
             }

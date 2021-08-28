@@ -56,7 +56,7 @@
     <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AnalayzipApiExcerise.cs" />
+    <Compile Include="AnalyzeApiExercise.cs" />
     <Compile Include="ApiTests.cs" />
     <Compile Include="Commits.cs" />
     <Compile Include="GithubApiHandler.cs" />
